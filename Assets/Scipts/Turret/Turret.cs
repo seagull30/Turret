@@ -12,9 +12,9 @@ public class Turret : MonoBehaviour
     private void Update()
     {
         if (!_isFire)
-        {
             gameObject.transform.Rotate(0.0f, _speed, 0.0f);
-        }
+        else
+            Shot();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,24 +22,21 @@ public class Turret : MonoBehaviour
         _isFire = true;
 
     }
-
-    private void OnTriggerStay(Collider other)
+    void Shot()
     {
-        if (other.tag == "Player")
+        _deltatime += Time.deltaTime;
+        gameObject.transform.LookAt(_target);
+
+        if (_deltatime >= 1.0f)
         {
-            _deltatime += Time.deltaTime;
-            gameObject.transform.LookAt(_target);
+            _deltatime = 0.0f;
 
-            if (_deltatime >= 1.0f)
-            {
-                _deltatime = 0.0f;
-
-                Vector3 spawnPosition = gameObject.transform.position;
-                GameObject bullet = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
-                bullet.transform.LookAt(_target);
-            }
+            Vector3 spawnPosition = gameObject.transform.position;
+            GameObject bullet = Instantiate(_bulletPrefab, spawnPosition, Quaternion.identity);
+            bullet.transform.LookAt(_target);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         _isFire = false;
