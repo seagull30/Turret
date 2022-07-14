@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &290245125
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -682,6 +682,7 @@ GameObject:
   - component: {fileID: 762726116}
   - component: {fileID: 762726115}
   - component: {fileID: 762726114}
+  - component: {fileID: 762726117}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -709,7 +710,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762726113}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f64fc23d7fbf8c41bd9b8b816b360ff, type: 3}
   m_Name: 
@@ -733,6 +734,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762726117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762726113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7541b618ff440ab408de2460c2435ed2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1307899813}
+  bulletPrefab: {fileID: 445139915270074119, guid: 6a1ffaafb996d784b87d62a24bd37829, type: 3}
 --- !u!1 &842124273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1686140518
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1540,7 +1555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1883328362
 SphereCollider:
   m_ObjectHideFlags: 0
